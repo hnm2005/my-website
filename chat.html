@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>대화방</title>
+    <style>
+        body {
+            background-color: rgb(255, 254, 254);
+            color: rgb(0, 0, 0);
+            font-family: sans-serif;
+            text-align: center;
+        }
+        #chat-messages {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            height: 200px;
+            overflow-y: scroll; /* 내용이 넘치면 스크롤바 표시 */
+        }
+        input[type="text"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-top: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>대화방 (234 암호)</h1>
+    <div id="chat-messages">
+        <p>대화 내용이 여기에 표시됩니다.</p>  <!-- 초기 메시지 -->
+    </div>
+    <input type="text" id="message" placeholder="메시지를 입력하세요">
+    <button onclick="sendMessage()">전송</button>
+    <a href="index.html">돌아가기</a>
+
+    <script>
+        function sendMessage() {
+            const message = document.getElementById("message").value;
+            if (message.trim() !== "") {
+                // 여기에서 서버로 메시지를 전송하는 로직을 추가해야 합니다.
+                // (예: AJAX를 사용하여 서버에 POST 요청)
+
+                // 임시로 메시지를 화면에 추가하는 코드
+                const chatMessages = document.getElementById("chat-messages");
+                const newMessage = document.createElement("p");
+                newMessage.textContent = "You: " + message;
+                chatMessages.appendChild(newMessage);
+                document.getElementById("message").value = ""; // 입력 필드 초기화
+            }
+        }
+    </script>
+</body>
+</html>
