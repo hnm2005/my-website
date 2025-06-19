@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>첨단</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 화면 전체를 채우도록 설정 */
+            margin: 0;
+        }
+        #password-container {
+            text-align: center;
+        }
+        input[type="password"] {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="password-container">
+        <h1>방문하신것을 환영합니다!</h1>
+        <input type="password" id="password" placeholder="암호를 입력하세요">
+        <button onclick="checkPassword()">입력</button>
+    </div>
+
+    <script>
+        function checkPassword() {
+            const password = document.getElementById("password").value;
+
+            if (password === "123") {
+                window.location.href = "page1.html"; // 암호가 123일 때 page1.html로 이동
+            } else if (password === "234") {
+                window.location.href = "chat.html"; // 암호가 234일 때 chat.html로 이동
+            } else {
+                alert("잘못된 암호입니다.");
+            }
+        }
+    </script>
+</body>
+</html>
